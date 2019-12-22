@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editText = findViewById(R.id.editText);
-    Button btn = findViewById(R.id.button);
-    ListView listView = findViewById(R.id.listView);
+    EditText editText;
+    Button btn;
+    ListView listView;
     ArrayList<String> arrayList;
     ArrayAdapter<String> adapter;
 
@@ -23,9 +23,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn.setOnClickListener((View.OnClickListener) this);
-        arrayList = new ArrayList<String>();
-        adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1 ,arrayList);
+        editText = findViewById(R.id.editText);
+        btn = findViewById(R.id.button);
+        listView = findViewById(R.id.listView);
+        arrayList = new ArrayList();
+        adapter = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1 ,arrayList);
         listView.setAdapter(adapter);
         btnonClick();
     }
